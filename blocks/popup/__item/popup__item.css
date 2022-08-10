@@ -1,0 +1,26 @@
+.popup__item {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  min-height: 32px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  background-color: transparent;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.popup__item:first-of-type {
+  margin: 0 0 24px 0;
+}
+
+
+.popup__item::placeholder {
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: black;
+}
+

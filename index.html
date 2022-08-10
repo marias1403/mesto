@@ -2,9 +2,106 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Git</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="pages/index.css">
 </head>
-<body>
+<body class="page">
+  <div class="popup">
+    <div class="popup__container">
+      <div class="popup__close-icon button"></div>
+      <h2 class="popup__heading">Редактировать профиль</h2>
+      <form action="#" class="popup__form">
+        <fieldset class="popup__input-container">
+          <input type="text" class="popup__item popup__item_name" placeholder="Жак-Ив Кусто" required>
+          <input type="text" class="popup__item popup__item_status" placeholder="Исследователь океана" required>
+        </fieldset>
+        <button class="popup__button button" type="submit">
+          <span class="popup__button-text">Сохранить</span>
+        </button>
+      </form>
+    </div>
+  </div>
 
+  <div class="page__container">
+    <header class="header page__header section">
+      <img class="header__logo" src="./images/logo.svg" alt="Лого">
+      <div class="header__line"></div>
+    </header>
+
+    <main class="content page__content">
+        <section class="profile section content__section">
+          <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="Аватарка">
+          <div class="profile__info">
+            <div class="profile__edit">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button edit-button button" type="button">
+                <img class="edit-button__icon" src="./images/edit-button-icon.svg" alt="Знак редактирования">
+              </button>
+            </div>
+            <p class="profile__status">Исследователь океана</p>
+          </div>
+          <button class="profile__add-button add-button button" type="button">
+            <img class="add-button__icon" src="./images/add-button-icon.svg" alt="Знак плюса">
+          </button>
+        </section>
+
+        <section class="elements section content__section">
+          <div class="elements__element">
+            <img class="elements__image" src="./images/elements-karachaevsk.jpg" alt="Древняя постройка на фоне зелени">
+            <div class="elements__description">
+              <h2 class="elements__title">Карачаево-Черкессия</h2>
+              <div class="elements__like button"></div>
+            </div>
+          </div>
+
+          <div class="elements__element">
+            <img class="elements__image" src="./images/elements-elbrus.jpg" alt="Древняя постройка на фоне зелени">
+            <div class="elements__description">
+              <h2 class="elements__title">Гора Эльбрус</h2>
+              <div class="elements__like button"></div>
+            </div>
+          </div>
+
+          <div class="elements__element">
+            <img class="elements__image" src="./images/elements-dombay.jpg" alt="Древняя постройка на фоне зелени">
+            <div class="elements__description">
+              <h2 class="elements__title">Домбай</h2>
+              <div class="elements__like button"></div>
+            </div>
+          </div>
+
+          <div class="elements__element">
+            <img class="elements__image" src="./images/elements-elbrus.jpg" alt="Древняя постройка на фоне зелени">
+            <div class="elements__description">
+              <h2 class="elements__title">Гора Эльбрус</h2>
+              <div class="elements__like button"></div>
+            </div>
+          </div>
+
+          <div class="elements__element">
+            <img class="elements__image" src="./images/elements-dombay.jpg" alt="Древняя постройка на фоне зелени">
+            <div class="elements__description">
+              <h2 class="elements__title">Домбай</h2>
+              <div class="elements__like button"></div>
+            </div>
+          </div>
+
+          <div class="elements__element">
+            <img class="elements__image" src="./images/elements-karachaevsk.jpg" alt="Древняя постройка на фоне зелени">
+            <div class="elements__description">
+              <h2 class="elements__title">Карачаевск</h2>
+              <div class="elements__like button"></div>
+            </div>
+          </div>
+        </section>
+    </main>
+
+    <footer class="footer section page__footer">
+      <p class="footer__copyright">© 2022 Mesto Russia</p>
+    </footer>
+  </div>
+<script src="/scripts/index.js"></script>
 </body>
 </html>

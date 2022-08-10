@@ -1,0 +1,19 @@
+.popup__button {
+  margin: 48px 0 0 0;
+  padding: 0;
+  outline: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  min-height: 50px;
+  width: 100%;
+  background-color: black;
+  border-radius: 2px;
+  border: none;
+}
+
+@media screen and (max-width: 767px) {
+  .popup__button {
+    min-height: 46px;
+  }
+}
