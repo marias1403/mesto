@@ -1,16 +1,19 @@
 .profile__status {
-  margin: 10px 0 0 0;
+  margin: 0;
   padding: 0;
   text-align: left;
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
-  color: white;
+  color: #ffffff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 767px) {
   .profile__status {
-    margin: 5px 0 0 0;
     text-align: center;
     font-size: 14px;
     line-height: 16px;

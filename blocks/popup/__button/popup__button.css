@@ -7,13 +7,19 @@
   cursor: pointer;
   min-height: 50px;
   width: 100%;
-  background-color: black;
+  background-color: #000000;
   border-radius: 2px;
   border: none;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 767px) {
   .popup__button {
     min-height: 46px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }

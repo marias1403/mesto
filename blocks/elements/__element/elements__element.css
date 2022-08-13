@@ -1,8 +1,8 @@
 .elements__element {
-  min-width: 282px;
+  min-width: 210px;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 10px;
   overflow: hidden;
 }

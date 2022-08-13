@@ -1,4 +1,4 @@
-.popup__item {
+.popup__input {
   margin: 0;
   padding: 0;
   border: 0;
@@ -11,16 +11,16 @@
   overflow: hidden;
 }
 
-.popup__item:first-of-type {
+.popup__input:first-of-type {
   margin: 0 0 24px 0;
 }
 
 
-.popup__item::placeholder {
+.popup__input::placeholder {
   font-family: inherit;
   font-size: 14px;
   line-height: 17px;
   font-weight: 400;
-  color: black;
+  color: #A5A5A5;
 }
 

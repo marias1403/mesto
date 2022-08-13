@@ -1,14 +1,12 @@
 .add-button {
-  padding: 0;
-  outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  background-image: url(../../images/add-button-icon.svg);
   min-height: 50px;
   min-width: 150px;
-  background-color: #000;
+  background-color: transparent;
   border: 2px solid #fff;
+  border-radius: 2px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media screen and (max-width: 767px) {
