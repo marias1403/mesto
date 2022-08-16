@@ -5,13 +5,13 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 927px) {
+@media screen and (max-width: 868px) {
   .header__logo {
     padding: 0 35px;
   }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 420px) {
   .header__logo {
     width: 104px;
     height: 25px;
