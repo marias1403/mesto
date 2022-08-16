@@ -13,8 +13,9 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 595px) {
   .elements {
+    max-width: 410px;
     grid-template-columns: 1fr;
     gap: 20px;
   }
