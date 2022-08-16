@@ -6,11 +6,13 @@
   border: 1px solid #fff;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 10px;
 }
 
 @media screen and (max-width: 767px) {
   .edit-button {
     height: 18px;
     width: 18px;
+    background-size: 7.5px;
   }
 }

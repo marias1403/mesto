@@ -1,4 +1,4 @@
-.popup__button {
+.popup__submit-button {
   margin: 48px 0 0 0;
   padding: 0;
   outline: none;
@@ -16,7 +16,7 @@
   color: #ffffff;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 630px) {
   .popup__button {
     min-height: 46px;
     font-size: 14px;

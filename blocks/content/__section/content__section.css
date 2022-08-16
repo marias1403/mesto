@@ -3,13 +3,13 @@
   width: 100%;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 927px) {
   .content__section {
     padding: 0 24px;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 630px) {
   .content__section {
     width: auto;
     padding: 0 16px;
