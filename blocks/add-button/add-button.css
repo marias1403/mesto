@@ -7,7 +7,7 @@
   border-radius: 2px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 22px;
+  background-size: 22px 22px;
 }
 
 @media screen and (max-width: 767px) {

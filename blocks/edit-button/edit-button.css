@@ -6,7 +6,7 @@
   border: 1px solid #fff;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 10px;
+  background-size: 10px 10px;
 }
 
 @media screen and (max-width: 767px) {

@@ -7,15 +7,16 @@
   justify-items: stretch;
 }
 
-@media screen and (max-width: 868px) {
+@media screen and (max-width: 927px) {
   .elements {
+    max-width: 581px;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 595px) {
+@media screen and (max-width: 628px) {
   .elements {
-    max-width: 410px;
+    max-width: 282px;
     grid-template-columns: 1fr;
     gap: 20px;
   }

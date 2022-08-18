@@ -1,6 +1,6 @@
 .elements__element {
-  min-width: 265px;
-  max-width: 410px;
+  width: 282px;
+  min-height: 361px;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
