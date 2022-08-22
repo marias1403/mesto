@@ -1,98 +1,74 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title lang="ru">Mesto</title>
-    <link rel="stylesheet" href="pages/index.css">
-</head>
-<body class="page">
-  <div class="page__container">
-    <header class="header page__header section">
-      <img class="header__logo" src="./images/logo.svg" alt="Лого Mesto">
-    </header>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title lang="ru">Mesto</title>
+      <link rel="stylesheet" href="pages/index.css">
+  </head>
+  <body class="page">
+    <div class="page__container">
+      <header class="header page__header section">
+        <img class="header__logo" src="./images/logo.svg" alt="Лого Mesto">
+      </header>
 
-    <main class="content page__content">
-        <section class="profile section content__section">
-          <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="Аватарка">
-          <div class="profile__info">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button edit-button button" type="button"></button>
-            <p class="profile__status">Исследователь океана</p>
-          </div>
-          <button class="profile__add-button add-button button" type="button"></button>
-        </section>
+      <main class="content page__content">
+          <section class="profile section content__section">
+            <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="Аватарка">
+            <div class="profile__info">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button edit-button button" type="button"></button>
+              <p class="profile__status">Исследователь океана</p>
+            </div>
+            <button class="profile__add-button add-button button" type="button"></button>
+          </section>
 
-        <section class="section content__section">
-          <ul class="elements page__elements">
-            <li class="elements__element">
-              <img class="elements__image" src="./images/elements-karachaevsk.jpg" alt="Древняя постройка на фоне зелени">
-              <div class="elements__description">
-                <h2 class="elements__title">Карачаево-Черкессия</h2>
-                <button class="elements__like button" type="button"></button>
-              </div>
-            </li>
+          <section class="section content__section">
+            <ul class="elements page__elements"></ul>
+          </section>
+      </main>
 
-            <li class="elements__element">
-              <img class="elements__image" src="./images/elements-elbrus.jpg" alt="Равнина на закате и горная вершина вдалеке">
-              <div class="elements__description">
-                <h2 class="elements__title">Гора Эльбрус</h2>
-                <button class="elements__like button" type="button"></button>
-              </div>
-            </li>
+      <footer class="footer section page__footer">
+        <p class="footer__copyright">&#169; 2022 Mesto Russia</p>
+      </footer>
 
-            <li class="elements__element">
-              <img class="elements__image" src="./images/elements-dombay.jpg" alt="Снежные вершины гор и хвойный лес">
-              <div class="elements__description">
-                <h2 class="elements__title">Домбай</h2>
-                <button class="elements__like button" type="button"></button>
-              </div>
-            </li>
+      <div class="popup popup_type_edit-profile">
+        <div class="popup__container">
+          <button class="popup__close-button button" type="button"></button>
+          <h2 class="popup__heading">Редактировать профиль</h2>
+          <form action="#" class="popup__form" name="user-info">
+            <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Ваше имя" required aria-label="Имя">
+            <input type="text" name="status" class="popup__input popup__input_type_status" placeholder="Ваша должность" required aria-label="Статус">
+            <button class="popup__submit-button button" type="submit">Сохранить</button>
+          </form>
+        </div>
+      </div>
 
-            <li class="elements__element">
-              <img class="elements__image" src="./images/elements-elbrus.jpg" alt="Равнина на закате и горная вершина вдалеке">
-              <div class="elements__description">
-                <h2 class="elements__title">Гора Эльбрус</h2>
-                <button class="elements__like button" type="button"></button>
-              </div>
-            </li>
-
-            <li class="elements__element">
-              <img class="elements__image" src="./images/elements-dombay.jpg" alt="Снежные вершины гор и хвойный лес">
-              <div class="elements__description">
-                <h2 class="elements__title">Домбай</h2>
-                <button class="elements__like button" type="button"></button>
-              </div>
-            </li>
-
-            <li class="elements__element">
-              <img class="elements__image" src="./images/elements-karachaevsk.jpg" alt="Древняя постройка на фоне зелени">
-              <div class="elements__description">
-                <h2 class="elements__title">Карачаевск</h2>
-                <button class="elements__like button" type="button"></button>
-              </div>
-            </li>
-          </ul>
-        </section>
-    </main>
-
-    <footer class="footer section page__footer">
-      <p class="footer__copyright">&#169; 2022 Mesto Russia</p>
-    </footer>
-
-    <div class="popup">
-      <div class="popup__container">
-        <button class="popup__close-button button" type="button"></button>
-        <h2 class="popup__heading">Редактировать профиль</h2>
-        <form action="#" class="popup__form" name="user-info">
-          <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Ваше имя" required aria-label="Имя">
-          <input type="text" name="status" class="popup__input popup__input_type_status" placeholder="Ваша должность" required aria-label="Статус">
-          <button class="popup__submit-button button" type="submit">Сохранить</button>
-        </form>
+      <div class="popup popup_type_add-card">
+        <div class="popup__container">
+          <button class="popup__close-button button" type="button"></button>
+          <h2 class="popup__heading">Новое место</h2>
+          <form action="#" class="popup__form" name="user-info">
+            <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название" required aria-label="Название">
+            <input type="text" name="status" class="popup__input popup__input_type_status" placeholder="Ссылка на картинку" required aria-label="Ссылка">
+            <button class="popup__submit-button button" type="submit">Создать</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-<script src="scripts/index.js" defer></script>
-</body>
+
+    <template class="template">
+      <li class="elements__element">
+        <button class="elements__delete button" type="button"></button>
+        <img class="elements__image" alt="#">
+        <div class="elements__description">
+          <h2 class="elements__title">Карачаево-Черкессия</h2>
+          <button class="elements__like button" type="button"></button>
+        </div>
+      </li>
+    </template>
+
+    <script src="scripts/index.js" defer></script>
+  </body>
 </html>
