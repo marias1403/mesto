@@ -79,6 +79,7 @@ function handleCardFormSubmit(e) {
   const el = e.target.closest('.elements__element');
   imagePopup.querySelector('.popup__image').src = el.querySelector('.elements__image').src;
   imagePopup.querySelector('.popup__figcaption').textContent = el.querySelector('.elements__title').textContent;
+  imagePopup.querySelector('.popup__image').setAttribute('alt', el.querySelector('.elements__title').textContent);
   imagePopup.classList.add('popup_opened');
 }
 
@@ -98,6 +99,7 @@ function createCard(title, img) {
   const newCardElement = cardTemplate.content.cloneNode(true);
   newCardElement.querySelector('.elements__title').textContent = title;
   newCardElement.querySelector('.elements__image').src = img;
+  newCardElement.querySelector('.elements__image').setAttribute('alt', title);
   cardAddListeners(newCardElement);
   return newCardElement;
 }
