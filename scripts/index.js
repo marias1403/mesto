@@ -1,6 +1,6 @@
 const popUp = document.querySelector('.popup');
-const editButton = document.querySelector('.edit-button');
-const closeButton = document.querySelector('.popup__close-button');
+const buttonEditProfile = document.querySelector('.edit-button');
+const buttonClose = document.querySelector('.popup__close-button');
 const popUpForm = popUp.querySelector('.popup__form');
 const nameInput = popUpForm.querySelector('.popup__input_type_name');
 const jobInput = popUpForm.querySelector('.popup__input_type_status');
@@ -12,15 +12,15 @@ const profileStatus = profile.querySelector('.profile__status');
 const cardTemplate = document.querySelector('.template');
 const cards = document.querySelector('.elements');
 
-const addCardPopup = document.querySelector('.popup_type_add-card');
-const addButton = document.querySelector('.add-button');
-const closeAddPopupButton = addCardPopup.querySelector('.popup__close-button_type_add');
-const addPopUpForm = addCardPopup.querySelector('.popup__form_type_add');
-const imageTitleInput = addCardPopup.querySelector('.popup__input_type_image-title');
-const imageLinkInput = addCardPopup.querySelector('.popup__input_type_image-link');
+const popupCard = document.querySelector('.popup_type_add-card');
+const buttonAddCard = document.querySelector('.add-button');
+const buttonCloseCardPopup = popupCard.querySelector('.popup__close-button_type_add');
+const cardPopupForm = popupCard.querySelector('.popup__form_type_add');
+const imageTitleInput = popupCard.querySelector('.popup__input_type_image-title');
+const imageLinkInput = popupCard.querySelector('.popup__input_type_image-link');
 
 const imagePopup = document.querySelector('.popup_type_image');
-const closeImagePopupButton = document.querySelector('.popup__close-button_type_image');
+const buttonCloseImagePopup = document.querySelector('.popup__close-button_type_image');
 
 
 function openPopup() {
@@ -33,24 +33,24 @@ function closePopup() {
   popUp.classList.remove('popup_opened');
 }
 
-function formSubmitHandler(evt) {
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileStatus.textContent = jobInput.value;
   closePopup();
 }
 
-editButton.addEventListener('click', openPopup);
-closeButton.addEventListener('click', closePopup);
-popUpForm.addEventListener('submit', formSubmitHandler);
+buttonEditProfile.addEventListener('click', openPopup);
+buttonClose.addEventListener('click', closePopup);
+popUpForm.addEventListener('submit', handleProfileFormSubmit);
 
 
 function openAddPopup() {
-  addCardPopup.classList.add('popup_opened');
+  popupCard.classList.add('popup_opened');
 }
 
 function closeAddPopup() {
-  addCardPopup.classList.remove('popup_opened');
+  popupCard.classList.remove('popup_opened');
 }
 
 function addFormSubmitHandler(evt) {
@@ -60,9 +60,9 @@ function addFormSubmitHandler(evt) {
   closeAddPopup();
 }
 
-addButton.addEventListener('click', openAddPopup);
-closeAddPopupButton.addEventListener('click', closeAddPopup);
-addPopUpForm.addEventListener('submit', addFormSubmitHandler);
+buttonAddCard.addEventListener('click', openAddPopup);
+buttonCloseCardPopup.addEventListener('click', closeAddPopup);
+cardPopupForm.addEventListener('submit', addFormSubmitHandler);
 
 
 function handlePutLike(e) {
@@ -75,7 +75,7 @@ function handleDelete(e) {
   cardElement.remove();
 }
 
-function handlePreviewImage(e) {
+function handleCardFormSubmit(e) {
   const el = e.target.closest('.elements__element');
   imagePopup.querySelector('.popup__image').src = el.querySelector('.elements__image').src;
   imagePopup.querySelector('.popup__figcaption').textContent = el.querySelector('.elements__title').textContent;
@@ -86,12 +86,12 @@ function closePreviewImage() {
   imagePopup.classList.remove('popup_opened');
 }
 
-closeImagePopupButton.addEventListener('click', closePreviewImage);
+buttonCloseImagePopup.addEventListener('click', closePreviewImage);
 
 function cardAddListeners(element) {
   element.querySelector('.elements__like').addEventListener('click', handlePutLike);
   element.querySelector('.elements__delete').addEventListener('click', handleDelete);
-  element.querySelector('.elements__image').addEventListener('click', handlePreviewImage);
+  element.querySelector('.elements__image').addEventListener('click', handleCardFormSubmit);
 }
 
 function createCard(title, img) {
