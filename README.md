@@ -13,5 +13,7 @@
 * grid
 * медиазапросы
 * JavaScript
+* ООП
+* Классы
 
 [Ссылка на Github Pages](https://marias1403.github.io/mesto/)
