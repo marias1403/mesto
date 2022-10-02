@@ -1,7 +1,8 @@
 export class FormValidator {
-  constructor(config, formElement) {
+  constructor(config, formElement, buttonSubmit) {
     this._config = config;
     this._formElement = formElement;
+    this._buttonSubmit = buttonSubmit;
   }
 
   _showInputError = (input) => {
@@ -32,21 +33,21 @@ export class FormValidator {
     })
   };
 
-  _disableButton = (buttonSubmit) => {
-    buttonSubmit.classList.add(this._config.inactiveButtonClass);
-    buttonSubmit.setAttribute('disabled', 'disabled');
+  _disableButton = () => {
+    this._buttonSubmit.classList.add(this._config.inactiveButtonClass);
+    this._buttonSubmit.disabled = true;
   };
 
-  _enableButton = (buttonSubmit) => {
-    buttonSubmit.classList.remove(this._config.inactiveButtonClass);
-    buttonSubmit.removeAttribute('disabled', 'disabled');
+  _enableButton = () => {
+    this._buttonSubmit.classList.remove(this._config.inactiveButtonClass);
+    this._buttonSubmit.disabled = false;
   };
 
-  _toggleButtonState = (input, buttonSubmit) => {
+  _toggleButtonState = (input) => {
     if (this._hasInvalidInputs(input)) {
-      this._disableButton(buttonSubmit);
+      this._disableButton(this._buttonSubmit);
     } else {
-      this._enableButton(buttonSubmit);
+      this._enableButton(this._buttonSubmit);
     }
   };
 
