@@ -24,6 +24,8 @@ const imageLinkInput = popupCard.querySelector('.popup__input_type_image-link');
 const buttonSubmitCard = popupCard.querySelector('.popup__submit-button');
 
 const imagePopup = document.querySelector('.popup_type_image');
+const imagePopupImg = imagePopup.querySelector('.popup__image');
+const imagePopupFigcaption = imagePopup.querySelector('.popup__figcaption');
 
 const formProfileValidator = new FormValidator(validationConfig, popUpForm, buttonSubmitProfile);
 const formCardValidator = new FormValidator(validationConfig, cardPopupForm, buttonSubmitCard);
@@ -67,9 +69,9 @@ function closePopUp(popup) {
 }
 
 function openImagePopup(cardData) {
-  imagePopup.querySelector('.popup__image').src = cardData.image;
-  imagePopup.querySelector('.popup__figcaption').textContent = cardData.title;
-  imagePopup.querySelector('.popup__image').alt = cardData.title;
+  imagePopupImg.src = cardData.image;
+  imagePopupFigcaption.textContent = cardData.title;
+  imagePopupImg.alt = cardData.title;
   openPopUp(imagePopup);
 }
 
@@ -101,6 +103,7 @@ function handleAddFormSubmit(evt) {
   cardsContainer.prepend(card.generateCard());
   closePopUp(popupCard);
   cardPopupForm.reset();
+  formCardValidator.disableButton();
 }
 
 buttonAddCard.addEventListener('click', handleButtonAddCard);
