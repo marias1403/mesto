@@ -1,7 +1,7 @@
 import Popup from './Popup.js';
 
 export default class PopupWithImage extends Popup {
-  open(image, title) {
+  open({ image, title }) {
     const popupImage = this._popup.querySelector('.popup__image');
     popupImage.src = image;
     popupImage.alt = title;
