@@ -14,11 +14,13 @@
 
       <main class="content page__content">
         <section class="profile section content__section">
-          <img class="profile__avatar" src="<%=require('./images/profile-avatar.jpg')%>" alt="Аватарка">
+          <div class="profile__avatar-overlay">
+            <img class="profile__avatar" src="" alt="Аватарка">
+          </div>
           <div class="profile__info">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <h1 class="profile__name"></h1>
             <button class="profile__edit-button edit-button button" type="button"></button>
-            <p class="profile__status">Исследователь океана</p>
+            <p class="profile__status"></p>
           </div>
           <button class="profile__add-button add-button button" type="button"></button>
         </section>
@@ -73,13 +75,39 @@
       </figure>
     </div>
 
+    <div class="popup popup_type_delete">
+      <div class="popup__container">
+        <button class="popup__close-button button" type="button"></button>
+        <h2 class="popup__heading popup__heading_type_delete">Вы уверены?</h2>
+        <form action="#" class="popup__form" name="user-info" novalidate>
+          <button class="popup__submit-button popup__submit-button_type_delete button" type="submit">Да</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_type_avatar">
+      <div class="popup__container">
+        <button class="popup__close-button button" type="button"></button>
+        <h2 class="popup__heading">Обновить аватар</h2>
+        <form action="#" class="popup__form popup__form_type_avatar" name="user-info" novalidate>
+          <input id="avatar" type="url" name="avatar" class="popup__input popup__input_type_avatar" placeholder="Ссылка на фото профиля" required aria-label="Ссылка">
+          <span id="avatar-error" class="popup__error"></span>
+
+          <button class="popup__submit-button popup__submit-button_type_avatar button" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
     <template class="template">
       <li class="elements__element">
         <button class="elements__delete button" type="button"></button>
         <img class="elements__image" alt="#">
         <div class="elements__description">
           <h2 class="elements__title">Карачаево-Черкессия</h2>
-          <button class="elements__like button" type="button"></button>
+          <div class="elements__like-wrapper">
+            <button class="elements__like button" type="button"></button>
+            <p class="elements__like-counter">0</p>
+          </div>
         </div>
       </li>
     </template>
