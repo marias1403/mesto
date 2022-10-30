@@ -122,7 +122,7 @@ const popupCardElement = new PopupWithForm({
       .then((res) => {
         const cardElement = createCard(
           {
-            data: {link: res.link, title: res.title},
+            data: {image: res.link, title: res.name, likes: res.likes, _id: res._id, owner: res.owner._id },
             templateSelector: '.template', userId: userId}, handleCardClick, handlePutLike, handleRemoveLike);
         cardsContainer.prepend(cardElement);
         popupCardElement.close();
