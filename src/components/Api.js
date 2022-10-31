@@ -5,64 +5,60 @@ export default class Api {
   }
 
   getUserInfo() {
-    return fetch(this._baseUrl + 'users/me', { headers: this._header })
-      .then(this._checkResponse);
+    return this._request(this._baseUrl + 'users/me', { headers: this._header })
   }
 
   changeAvatar({ avatar }) {
-    return fetch(this._baseUrl + 'users/me/avatar', {
+    return this._request(this._baseUrl + 'users/me/avatar', {
       method: 'PATCH',
       headers: this._header,
       body: JSON.stringify( { avatar }),
     })
-      .then(this._checkResponse);
   }
 
   editProfile({ name, about}) {
-    return fetch(this._baseUrl + 'users/me', {
+    return this._request(this._baseUrl + 'users/me', {
       method: 'PATCH',
       headers: this._header,
       body: JSON.stringify( { name, about }),
     })
-      .then(this._checkResponse);
   }
 
   getInitialsCards() {
-    return fetch(this._baseUrl + 'cards', { headers: this._header })
-      .then(this._checkResponse);
+    return this._request(this._baseUrl + 'cards', { headers: this._header })
   }
 
   addCard({ name, link }) {
-    return fetch(this._baseUrl + 'cards', {
+    return this._request(this._baseUrl + 'cards', {
       method: 'POST',
       headers: this._header,
       body: JSON.stringify( { name, link }),
     })
-      .then(this._checkResponse);
   }
 
   deleteCard(cardId) {
-    return fetch(this._baseUrl + 'cards/' + cardId, {
+    return this._request(this._baseUrl + 'cards/' + cardId, {
       method: 'DELETE',
       headers: this._header,
     })
-      .then(this._checkResponse);
   }
 
   putLike(cardId) {
-    return fetch(this._baseUrl + 'cards/' + cardId + '/likes', {
+    return this._request(this._baseUrl + 'cards/' + cardId + '/likes', {
       method: 'PUT',
       headers: this._header,
     })
-      .then(this._checkResponse);
   }
 
   deleteLike(cardId) {
-    return fetch(this._baseUrl + 'cards/' + cardId + '/likes', {
+    return this._request(this._baseUrl + 'cards/' + cardId + '/likes', {
       method: 'DELETE',
       headers: this._header,
     })
-      .then(this._checkResponse);
+  }
+
+  _request(url, options) {
+    return fetch(url, options).then(this._checkResponse);
   }
 
   _checkResponse(response) {
