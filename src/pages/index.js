@@ -126,7 +126,7 @@ const popupCardElement = new PopupWithForm({
           {
             data: {image: res.link, title: res.name, likes: res.likes, _id: res._id, owner: res.owner._id },
             templateSelector: '.template', userId: userId}, handleCardClick, handlePutLike, handleRemoveLike);
-        cardsContainer.prepend(cardElement);
+        cardList.prependItem(cardElement);
         popupCardElement.close();
       })
       .catch((err) => {

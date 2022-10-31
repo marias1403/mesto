@@ -5,12 +5,7 @@ export default class Section {
   }
 
   addItem(element) {
-    const card = this._renderer(element)
-    this._container.prepend(card);
-  }
-
-  renderCard(element) {
-    this._renderer(element);
+    this._container.prepend(element);
   }
 
   clear() {
