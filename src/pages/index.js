@@ -9,7 +9,7 @@ import Api from "../components/Api";
 import { validationConfig } from '../utils/validationConfig.js';
 import './index.css';
 
-import { buttonEditProfile, cardsContainer, buttonAddCard, buttonEditAvatar } from '../utils/constants';
+import { buttonEditProfile, buttonAddCard, buttonEditAvatar } from '../utils/constants';
 
 const api = new Api({
   baseUrl: 'https://nomoreparties.co/v1/cohort-52/',
@@ -96,6 +96,7 @@ Promise.all([
 const popupProfileElement = new PopupWithForm({
   popupSelector: '.popup_type_edit-profile',
   handleFormSubmit: (inputValues) => {
+    popupProfileElement.renderLoading(true, 'Сохранение...');
     api.editProfile({ name: inputValues.name, about: inputValues.status })
       .then((res) => {
         userInfo.setUserInfo({name: res.name, about: res.about});
@@ -104,6 +105,9 @@ const popupProfileElement = new PopupWithForm({
       .catch((err) => {
         console.log('Error while editing profile', err);
       })
+      .finally(() => {
+        popupProfileElement.renderLoading(false);
+      });
   }
 });
 
@@ -120,6 +124,7 @@ buttonEditProfile.addEventListener('click', () => {
 const popupCardElement = new PopupWithForm({
   popupSelector: '.popup_type_add-card',
   handleFormSubmit: (inputValues) => {
+    popupCardElement.renderLoading(true, 'Создание...');
     api.addCard({ link: inputValues.link, name: inputValues.title })
       .then((res) => {
         const cardElement = createCard(
@@ -132,6 +137,9 @@ const popupCardElement = new PopupWithForm({
       .catch((err) => {
         console.log('Error while adding card', err);
       })
+      .finally(() => {
+        popupCardElement.renderLoading(false);
+      });
   }
 });
 
@@ -150,6 +158,7 @@ popupConfirmDelete.setEventListeners();
 const popupProfileAvatar = new PopupWithForm({
   popupSelector: '.popup_type_avatar',
   handleFormSubmit: (inputValues) => {
+    popupProfileAvatar.renderLoading(true, 'Сохранение...');
     api.changeAvatar({ avatar: inputValues.avatar })
       .then((res) => {
         userInfo.setAvatar({avatar: res.avatar});
@@ -158,6 +167,9 @@ const popupProfileAvatar = new PopupWithForm({
       .catch((err) => {
         console.log('Error while changing avatar', err);
       })
+      .finally(() => {
+        popupProfileAvatar.renderLoading(false);
+      });
   }
 });
 
